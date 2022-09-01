@@ -17,13 +17,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
       //Recuperar los valores del formulario
       let nombre = document.getElementById("nombre").value;
       let email = document.getElementById("correo").value;
-      let genero = getGenero();
+      let mensaje = document.getElementById("mensaje").value;
+      //let genero = getGenero();
       let intereses = getIntereses();
 
       let suscriptor = {
         nombre,
         email,
-        genero,
+        mensaje,
+        //genero,
         intereses,
         fecha_registro: new Date().toUTCString(),
       };
@@ -31,6 +33,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       //console.log("El nombre del suscriptor es: " + nombre);
       console.dir(suscriptor);
       guardarSuscriptor(suscriptor);
+      mostrarExito("se guardo bien");
     } catch (e) {
       mostrarError(e.message);
     }
@@ -42,7 +45,7 @@ function mostrarExito() {
 }
 
 
-function guardarSuscriptor(suscriptor) {
+async function guardarSuscriptor(suscriptor) {
     const url = "https://curso-front-smu-default-rtdb.firebaseio.com/suscriptores.json";
     //Alternativa 1:
     /*fetch(url, {
@@ -58,7 +61,7 @@ function guardarSuscriptor(suscriptor) {
         body: JSON.stringify(suscriptor)
     });
     const data = await respuesta.json();
-    mostrarExito("Se guardó correctamente su suscripcion");
+    mostrarExito("Se guardó correctamente su suscripcion"+ data.name);
 }
 
 function getIntereses() {
@@ -73,7 +76,7 @@ function getIntereses() {
   return arrIntereses;
 }
 
-function getGenero() {
+/*function getGenero() {
   let inputSeleccionado = document.querySelector(
     "input[name='genero']:checked"
   );
@@ -82,7 +85,7 @@ function getGenero() {
   }
   const genero = inputSeleccionado.value;
   return genero;
-}
+}*/
 
 function mostrarError(mensajeDeError) {
   document.getElementById("form-mensaje-error").style.display = "block";
