@@ -8,12 +8,15 @@ a {
 }
 
 .cuerpo {
-    Background-image: url("../img/low-poly-grid-haikei\ \(1\).svg");
-    Background-size: cover;
+    Background-image: url("../img/imagenFondoAzul.jpg");
     Background-repeat: no-repeat;
     color: aliceblue;  
 }
 
 footer {
     text-align: center;
+}
+
+.formulario-contacto{
+    text-align:left;
 }

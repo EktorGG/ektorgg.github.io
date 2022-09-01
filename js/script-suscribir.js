@@ -4,21 +4,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
   /* Con el evento DomContentLoaded me aseguro que todas las etiquetas HTML
     fueron cargadas y procesadas por el browser
     más info en : https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event*/
-
   console.log("evento DomContentLoaded");
-
   // Sintaxis de variables:
   // let nombreVariable = valor;
   // Ej: let nombre = "Héctor";
-
+  //Funcion botón de suscribirse
   let boton = document.getElementById("btn-suscribir");
   boton.addEventListener("click", (clickeo) => {
     try {
       //Recuperar los valores del formulario
       let nombre = document.getElementById("nombre").value;
       let email = document.getElementById("correo").value;
-      let mensaje = document.getElementById("mensaje").value;
-      //let genero = getGenero();
+      let genero = getGenero();
       let intereses = getIntereses();
 
       let suscriptor = {
@@ -29,11 +26,34 @@ window.addEventListener("DOMContentLoaded", (event) => {
         intereses,
         fecha_registro: new Date().toUTCString(),
       };
-
       //console.log("El nombre del suscriptor es: " + nombre);
       console.dir(suscriptor);
       guardarSuscriptor(suscriptor);
-      mostrarExito("se guardo bien");
+    } catch (e) {
+      mostrarError(e.message);
+    }
+  });
+});
+
+//Función boton enviar mensaje
+window.addEventListener("DOMContentLoaded", (event) => {
+  let boton = document.getElementById("btn-enviar-mensaje");
+  boton.addEventListener("click", (clickeo) => {
+    try {
+      //Recuperar los valores del formulario
+      let nombre = document.getElementById("nombre").value;
+      let email = document.getElementById("correo").value;
+      let mensaje = document.getElementById("mensaje").value;
+
+      let contacto = {
+        nombre,
+        email,
+        mensaje,
+        fecha_registro: new Date().toUTCString(),
+      };
+      //console.log("El nombre del suscriptor es: " + nombre);
+      console.dir(contacto);
+      guardarContacto(contacto);
     } catch (e) {
       mostrarError(e.message);
     }
@@ -41,27 +61,46 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function mostrarExito() {
-    document.getElementById("form-mensaje-exitoso").style.display = "block";
+  document.getElementById("form-mensaje-exitoso").style.display = "block";
 }
-
-
-async function guardarSuscriptor(suscriptor) {
-    const url = "https://curso-front-smu-default-rtdb.firebaseio.com/suscriptores.json";
-    //Alternativa 1:
-    /*fetch(url, {
+async function guardarContacto(contacto) {
+  const url =
+    "https://curso-front-smu-default-rtdb.firebaseio.com/contactos.json";
+  //Alternativa 1:
+  /*fetch(url, {
         method: "POST",
         body: JSON.stringify(suscriptor),
     })
     .then(respuesta =>respuesta.json()) //Devuelve una promesa
     .then(data => mostrarExito("Se guardó correctamente su suscripción"))*/
-    
-    //Alternativa 2:
-    const respuesta = await fetch(url, {
+
+  //Alternativa 2:
+  const respuesta = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify(contacto),
+  });
+  const data = await respuesta.json();
+  mostrarExito("Se guardó correctamente su mensaje" + data.name);
+}
+
+async function guardarSuscriptor(suscriptor) {
+  const url =
+    "https://curso-front-smu-default-rtdb.firebaseio.com/suscriptores.json";
+  //Alternativa 1:
+  /*fetch(url, {
         method: "POST",
-        body: JSON.stringify(suscriptor)
-    });
-    const data = await respuesta.json();
-    mostrarExito("Se guardó correctamente su suscripcion"+ data.name);
+        body: JSON.stringify(suscriptor),
+    })
+    .then(respuesta =>respuesta.json()) //Devuelve una promesa
+    .then(data => mostrarExito("Se guardó correctamente su suscripción"))*/
+
+  //Alternativa 2:
+  const respuesta = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify(suscriptor),
+  });
+  const data = await respuesta.json();
+  mostrarExito("Se guardó correctamente su suscripcion" + data.name);
 }
 
 function getIntereses() {
@@ -75,17 +114,6 @@ function getIntereses() {
   }
   return arrIntereses;
 }
-
-/*function getGenero() {
-  let inputSeleccionado = document.querySelector(
-    "input[name='genero']:checked"
-  );
-  if (inputSeleccionado == null) {
-    throw new Error("Debe seleccionar un género");
-  }
-  const genero = inputSeleccionado.value;
-  return genero;
-}*/
 
 function mostrarError(mensajeDeError) {
   document.getElementById("form-mensaje-error").style.display = "block";
