@@ -15,14 +15,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
       //Recuperar los valores del formulario
       let nombre = document.getElementById("nombre").value;
       let email = document.getElementById("correo").value;
-      let genero = getGenero();
       let intereses = getIntereses();
 
       let suscriptor = {
         nombre,
         email,
         mensaje,
-        //genero,
         intereses,
         fecha_registro: new Date().toUTCString(),
       };
