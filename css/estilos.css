@@ -14,9 +14,18 @@ a {
 }
 
 footer {
+    align-items: flex-end;
     text-align: center;
 }
 
 .formulario-contacto{
     text-align:left;
+}
+
+carrousel-item {
+    max-width: 50px;
+}
+
+.pie-pagina {
+    align-items: flex-end;
 }

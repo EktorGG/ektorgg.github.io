@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Play', sans-serif;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(9, 9, 67);
+    color: cornsilk;
+}
+
+.brand {
+    color: aqua;
+    font-size: 30px;
+    margin-top: -5px;
+}
+
+.navbar {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+}
+
+.menu {
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+.menu a {
+    color: cornsilk;
+    text-decoration: none;
+
+}
+
+.menu a:hover {
+    background-color: aqua;
+    color: black;
+    padding: 10px;
+    transition: ease-in .1s;
+}
+
+.menu li {
+    list-style: none;
+    padding-right: 3em;
+}
+
+.menu .active {
+    color: rgb(0, 200, 255);
+}
+
+.main {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+span {
+    color: aqua;
+}
+
+.download-cv {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: yellow;
+    border: none;
+    cursor: pointer;
+    color: black;
+    box-shadow: 0px 0px 5px 1px rgb(255, 255, 0);
+}
+
+.download-cv:hover {
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;
+}
+
+.about {
+    margin: 0 auto;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about img {
+    width: 50%;
+    grid-column: 1/5;
+}
+
+.about-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3em;
+
+}
+
+.about-info h2 {
+    font-size: 3em;
+    color: (9, 9, 67);
+}
+
+.divider {
+    height: 5px;
+    width: 200px;
+    background-color: aqua;
+    margin-top: 5px;
+    margin-bottom: 2em;
+}
+
+.about p {
+    margin-bottom: 1em;
+}
+
+#pie-pagina {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 3em;
+}

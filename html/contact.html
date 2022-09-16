@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hablemos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div id="cabecera">
+    </div>
+    <div class="wrapper">
+        <div class="main">
+            <div class="contact">
+                <h1>Contáctame</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas corrupti impedit odit alias laboriosam,
+                    quod accusamus vel placeat esse pariatur debitis, officia at tempora vitae ullam obcaecati labore
+                    animi. Cupiditate!</p>
+                <br>
+
+                <form action="https://contactoportafolio-8cc6a-default-rtdb.firebaseio.com/Contacto" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <br>
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo">
+                    <br>
+                    <label>
+                        <input type="checkbox" id="cbox1" value="general">General
+                    </label>
+                    <label>
+                        <input type="checkbox" id="cbox1" value="general">General
+                    </label>
+                    <label>
+                        <input type="checkbox" id="cbox1" value="general">General
+                    </label>
+                    <label>
+                        <input type="checkbox" id="cbox1" value="general">General
+                    </label>
+                    <br>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje">Hola Héctor...</textarea>
+                    <br>
+                    <button class="download-cv" type="submit">Enviar mensaje</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="pie-pagina">
+    </div>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
