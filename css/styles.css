@@ -132,4 +132,5 @@ span {
     text-align: center;
     font-weight: bold;
     padding-bottom: 3em;
+    align-content: flex-end;
 }
