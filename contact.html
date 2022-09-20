@@ -6,47 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hablemos</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-
     <div class="wrapper">
         <div id="cabecera">
         </div>
-        <div class="main">
-            <div class="contact">
-                <h1>Contáctame</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas corrupti impedit odit alias laboriosam,
-                    quod accusamus vel placeat esse pariatur debitis, officia at tempora vitae ullam obcaecati labore
-                    animi. Cupiditate!</p>
-                <br>
-
-                <form action="https://contactoportafolio-8cc6a-default-rtdb.firebaseio.com/Contacto" method="post">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre">
-                    <br>
-                    <label for="correo">Correo:</label>
-                    <input type="email" id="correo" name="correo">
-                    <br>
-                    <label>
-                        <input type="checkbox" id="cbox1" value="general">General
-                    </label>
-                    <label>
-                        <input type="checkbox" id="cbox1" value="general">General
-                    </label>
-                    <label>
-                        <input type="checkbox" id="cbox1" value="general">General
-                    </label>
-                    <label>
-                        <input type="checkbox" id="cbox1" value="general">General
-                    </label>
-                    <br>
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje">Hola Héctor...</textarea>
-                    <br>
-                    <button class="download-cv" type="submit">Enviar mensaje</button>
-                </form>
+        <div class="about">
+            <img src="/img/correo.png" alt="imagen-correo">
+            <div class="contact-form">
+                <div class="contact-info">
+                    <h2>Contáctame</h2>
+                    <div class="divider"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas corrupti impedit odit alias
+                        laboriosam,
+                        quod accusamus vel placeat esse pariatur debitis, officia at tempora vitae ullam obcaecati
+                        labore
+                        animi. Cupiditate!</p>
+                    <form class="form" action="https://contactoportafolio-8cc6a-default-rtdb.firebaseio.com/Contacto" method="post">
+                        
+                            <label for="nombre">Nombre: </label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Jhon Spartan 117">
+                        
+                        
+                            <label for="correo">Correo: </label>
+                            <input type="email" id="correo" name="correo" placeholder="masterchief@halo.com">
+                        <br>
+                        <div class="selector-genero">
+                            <label for="genero">Género:</label>
+                            <br>
+                            <select name="genero">
+                                <option value="femenino">Femenino</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="no-binario">No Binario</option>
+                                <option value="no-responde">Prefiero no responder</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="check-intereses">
+                            <label for="intereses">Intereses:</label>
+                            <br>
+                            <input type="checkbox" id="cbox1" value="diseño-web">
+                            <label for="cbox1">Diseño Web</label>
+                            <br>                            
+                            <input type="checkbox" id="cbox2" value="ux/ui">
+                            <label for="cbox2">UX/UI</label>
+                            <br>
+                            <input type="checkbox" id="cbox3" value="videojuegos">
+                            <label for="cbox3">Desarrollo de Videojuegos</label>
+                            <br>
+                            <input type="checkbox" id="cbox4" value="aplicaciones-moviles">
+                            <label for="cbox4">Aplicaciones Móviles</label>
+                        </div>
+                        <br>
+                        <label for="mensaje">Tu mensaje:</label>                        
+                        <textarea id="mensaje" name="mensaje">Hola Héctor...</textarea>
+                        <button class="btn-submit" type="submit">Enviar mensaje</button>
+                    </form>
+                </div>
             </div>
         </div>
         <div id="pie-pagina">
