@@ -25,7 +25,7 @@
                         quod accusamus vel placeat esse pariatur debitis, officia at tempora vitae ullam obcaecati
                         labore
                         animi. Cupiditate!</p>
-                    <form id="form-contact" class="form" method="get" action="">                        
+                    <form id="form-contact" class="form" method="get" action="">
                         <label for="nombre">Nombre: </label>
                         <input type="text" id="nombre" name="nombre" placeholder="Jhon Spartan 117">
                         <label for="correo">Correo: </label>
@@ -45,17 +45,22 @@
                         <div>
                             Intereses:
                             <br>
-                            <input type="checkbox" id="cbox1" value="diseño-web">
-                            <label for="cbox1">Diseño Web</label>
-                            <br>
-                            <input type="checkbox" id="cbox2" value="ux/ui">
-                            <label for="cbox2">UX/UI</label>
-                            <br>
-                            <input type="checkbox" id="cbox3" value="videojuegos">
-                            <label for="cbox3">Desarrollo de Videojuegos</label>
-                            <br>
-                            <input type="checkbox" id="cbox4" value="aplicaciones-moviles">
-                            <label for="cbox4">Aplicaciones Móviles</label>
+                            <div class="form-check">
+                                <input name="intereses" type="checkbox" id="cbox1" value="diseño-web">
+                                <label for="cbox1">Diseño Web</label>
+                            </div>
+                            <div class="form-check">
+                                <input name="intereses" type="checkbox" id="cbox2" value="ux/ui">
+                                <label for="cbox2">UX/UI</label>
+                            </div>
+                            <div class="form-check">
+                                <input name="intereses" type="checkbox" id="cbox3" value="videojuegos">
+                                <label for="cbox3">Desarrollo de Videojuegos</label>
+                            </div>
+                            <div class="form-check">
+                                <input name="intereses" type="checkbox" id="cbox4" value="aplicaciones-moviles">
+                                <label for="cbox4">Aplicaciones Móviles</label>
+                            </div>
                         </div>
                         <br>
                         <label for="mensaje">Tu mensaje:</label>

@@ -48,7 +48,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         correo,
         intereses,
         mensaje,
-        fecha_registro: new Date().toUTCString(),
+        fecha_registro: new Date().toISOString()
       };
       //console.log("El nombre del suscriptor es: " + nombre);
       console.dir(contacto);
@@ -60,9 +60,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 function getIntereses() {
-  let inputIntereses = document.querySelectorAll(
-    "input[name='intereses']:checked"
-  );
+  let inputIntereses = document.querySelectorAll("input[name='intereses']:checked");
   let arrIntereses = [];
   inputIntereses.forEach((interes) => arrIntereses.push(interes.value));
   if (inputIntereses.length < 1) {
@@ -87,12 +85,12 @@ function mostrarError(mensajeDeError) {
 async function guardarContacto(contacto) {
   const url = "https://curso-front-smu-default-rtdb.firebaseio.com/contacto.json";
   //Alternativa 1:
- fetch(url, {
+  /*fetch(url, {
         method: "POST",
         body: JSON.stringify(suscriptor),
     })
     .then(respuesta =>respuesta.json()) //Devuelve una promesa
-    .then(data => mostrarExito("Se guardó correctamente su suscripción"))
+    .then(data => mostrarExito("Se guardó correctamente su suscripción"))*/
   //Alternativa 2:
   const respuesta = await fetch(url, {
     method: "POST",
@@ -138,7 +136,5 @@ if( errores.length > 0) {
 } else {
     guardarDatos(); 
 }*/
-
-
 
 console.log("Hola mundo!");
