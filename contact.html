@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hablemos</title>
     <link rel="stylesheet" href="css/styles.css">
+
 </head>
 
 <body>
@@ -24,13 +25,11 @@
                         quod accusamus vel placeat esse pariatur debitis, officia at tempora vitae ullam obcaecati
                         labore
                         animi. Cupiditate!</p>
-                    <form class="form" action="https://contactoportafolio-8cc6a-default-rtdb.firebaseio.com/Contacto" method="post">                        
-                            <label for="nombre">Nombre: </label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Jhon Spartan 117">
-                        
-                        
-                            <label for="correo">Correo: </label>
-                            <input type="email" id="correo" name="correo" placeholder="masterchief@halo.com">
+                    <form id="form-contact" class="form" method="get" action="">                        
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Jhon Spartan 117">
+                        <label for="correo">Correo: </label>
+                        <input type="email" id="correo" name="correo" placeholder="masterchief@halo.com">
                         <br>
                         <div class="selector-genero">
                             <label for="genero">Género:</label>
@@ -43,12 +42,12 @@
                             </select>
                         </div>
                         <br>
-                        <div class="check-intereses">
-                            <label for="intereses">Intereses:</label>
+                        <div>
+                            Intereses:
                             <br>
                             <input type="checkbox" id="cbox1" value="diseño-web">
                             <label for="cbox1">Diseño Web</label>
-                            <br>                            
+                            <br>
                             <input type="checkbox" id="cbox2" value="ux/ui">
                             <label for="cbox2">UX/UI</label>
                             <br>
@@ -59,17 +58,26 @@
                             <label for="cbox4">Aplicaciones Móviles</label>
                         </div>
                         <br>
-                        <label for="mensaje">Tu mensaje:</label>                        
+                        <label for="mensaje">Tu mensaje:</label>
                         <textarea id="mensaje" name="mensaje">Hola Héctor...</textarea>
-                        <button class="btn-submit" type="submit">Enviar mensaje</button>
+                        <button id="btn-enviar-mensaje" class="btn-enviar-mensaje" type="button">Enviar mensaje</button>
                     </form>
+                    <section>
+                        <div id="form-mensaje-exitoso" class="alert alert-success" role="alert" style="display: none;">
+                            ¡Te has suscrito correctamente!
+                            <ul></ul>
+                        </div>
+                        <div id="form-mensaje-error" class="alert alert-danger" role="alert" style="display: none;">
+                            Faltan datos por completar
+                            <ul></ul>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
         <div id="pie-pagina">
         </div>
     </div>
-
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/script-suscribir.js"></script>
     <script src="js/script.js"></script>

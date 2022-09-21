@@ -172,7 +172,7 @@ select option {
     border-bottom: 1px solid rgb(0, 200, 255);
 }
 
-.btn-submit {
+.btn-enviar-mensaje {
     padding: 10px;
     margin-top: 10px;
     border-radius: 20px;
