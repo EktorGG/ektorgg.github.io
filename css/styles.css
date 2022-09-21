@@ -32,6 +32,11 @@ body {
     padding: 1em;
 }
 
+.navbar a {
+    text-decoration: none;
+    color: aqua;
+}
+
 .menu {
     display: flex;
     width: 50%;
